@@ -4,3 +4,9 @@ project(Anagrams_modulo_two)
 
 configure_file(anagrams.txt anagrams.txt COPYONLY)
 configure_file(remaining_territories.txt remaining_territories.txt COPYONLY)
+
+add_library(handle_IO handle_IO.cpp)
+target_include_directories(handle_IO PUBLIC ${CMAKE_SOURCE_DIR})
+
+add_executable(test_IO test_IO.cpp)
+target_link_libraries(test_IO handle_IO)
