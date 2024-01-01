@@ -52,3 +52,12 @@ std::vector<std::string> read_territories()
 
     return territories;
 }
+
+void write_solutions(const std::vector<Solution> &solutions)
+{
+    std::ofstream out_file(SOLUTIONS);
+
+    for (auto entry : solutions)
+        out_file << "    " << entry.anagram << " = "
+                 << entry.word1 << " + " << entry.word2 << '\n';
+}
